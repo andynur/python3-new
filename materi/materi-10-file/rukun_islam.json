@@ -1,0 +1,36 @@
+{
+  "judul": "Rukun Islam",
+  "jumlah": 5,
+  "status_kawin": false,
+  "status_jomblo": true,
+  "info": {
+    "halaman": 200,
+    "rating": 9.5,
+    "riwayat": {
+      "versi_1": 2030,
+      "versi_2": 2020
+    }
+  },
+  "rukun": ["Syahadat","Shalat","Zakat","Puasa","Haji"],
+  "surah": [
+    {
+      "no": 1,
+      "ayat": 7,
+      "nama": "Al-Fatihah",
+      "turun": "Makkah"
+    },
+    {
+      "no": 2,
+      "ayat": 286,
+      "nama": "Al-Baqaroh",
+      "turun": "Madinah",
+      "arab": "xxxx"
+    },
+    {
+      "no": 3,
+      "ayat": 200,
+      "nama": "Ali-Imron",
+      "turun": "Madinah"
+    }
+  ]
+}
