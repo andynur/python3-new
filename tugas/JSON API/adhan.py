@@ -4,16 +4,21 @@ import requests
 BASE_URL = "https://api.aladhan.com/v1/timingsByCity"
 
 # Tanggal statis
-DATE = "28-08-2025"
+DATE = "29-08-2025"
 
 # Negara statis
 COUNTRY = "Indonesia"
 
 # Meminta input nama kota dari pengguna
+print("-" * 50)
+print("APLIKASI JADWAL WAKTU SHOLAT")
+print("-" * 50)
 city_name = input("Masukkan nama kota di Indonesia (contoh: Jakarta): ")
+if (city_name == ""):
+  city_name = "Jakarta"
 
 # Membangun URL lengkap dengan parameter dari input pengguna
-url = f"{BASE_URL}/{DATE}?city={city_name}&country={COUNTRY}&method=8"
+url = f"{BASE_URL}/{DATE}?city={city_name}&country={COUNTRY}&methd=20"
 
 try:
     # Mengirim permintaan GET ke URL
@@ -29,20 +34,20 @@ try:
             timings = data["data"]["timings"]
             
             # Mencetak data jadwal sholat dalam bahasa Indonesia
-            print("\nJadwal Sholat:")
-            print(f"Untuk Kota: {city_name.capitalize()}, {COUNTRY.capitalize()}")
-            print(f"Pada Tanggal: {data['data']['date']['readable']}")
-            print("-" * 30)
+            print("\nJadwal Sholat")
+            print(f"Kota    : {city_name.capitalize()}, {COUNTRY.capitalize()}")
+            print(f"Tanggal : {data['data']['date']['gregorian']['date']} / {data['data']['date']['hijri']['date']} H")
+            print("-" * 50)
             
             # Menampilkan setiap waktu sholat
-            print(f"Imsak:    {timings['Imsak']}")
-            print(f"Subuh:    {timings['Fajr']}")
-            print(f"Terbit:   {timings['Sunrise']}")
-            print(f"Dzuhur:   {timings['Dhuhr']}")
-            print(f"Ashar:    {timings['Asr']}")
-            print(f"Maghrib:  {timings['Maghrib']}")
-            print(f"Isya:     {timings['Isha']}")
-            
+            print(f"Imsak   : {timings['Imsak']}")
+            print(f"Subuh   : {timings['Fajr']}")
+            print(f"Terbit  : {timings['Sunrise']}")
+            print(f"Dzuhur  : {timings['Dhuhr']}")
+            print(f"Ashar   : {timings['Asr']}")
+            print(f"Maghrib : {timings['Maghrib']}")
+            print(f"Isya    : {timings['Isha']}")
+            print("-" * 50)
         else:
             print("Tidak dapat menemukan data jadwal sholat untuk kota tersebut.")
             
